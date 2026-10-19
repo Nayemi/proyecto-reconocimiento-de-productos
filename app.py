@@ -18,7 +18,7 @@ if archivo:
     imagen = Image.open(archivo).convert("RGB")
     st.image(imagen, caption="Tu foto", width=350)
 
-    # hacer las comparaciones, predicciones, etc.
+    # hacer las comparaciones, predicciones, etc
     resultado = modelo(imagen, verbose=False)[0]
     nombre = resultado.names[resultado.probs.top1]
     confianza = float(resultado.probs.top1conf)
